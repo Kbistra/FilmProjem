@@ -27,6 +27,6 @@ namespace FilmProjem.DB
     
         public virtual DbSet<Filmler> Filmler { get; set; }
         public virtual DbSet<FilmTurleri> FilmTurleri { get; set; }
-        public virtual DbSet<Kullanıcılar> Kullanıcılar { get; set; }
+        public virtual DbSet<Kullanicilar> Kullanicilar { get; set; }
     }
 }

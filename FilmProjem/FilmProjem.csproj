@@ -151,7 +151,7 @@
     <Compile Include="DB\FilmTurleri.cs">
       <DependentUpon>FilmlerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Kullanıcılar.cs">
+    <Compile Include="DB\Kullanicilar.cs">
       <DependentUpon>FilmlerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -214,6 +214,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\KullaniciKayit.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

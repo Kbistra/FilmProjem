@@ -7,7 +7,7 @@
       <Diagram DiagramId="c236989a46ba4423afa3f375678b9acb" Name="Diagram1">
         <EntityTypeShape EntityType="FilmProjeDBModel.Filmler" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FilmProjeDBModel.FilmTurleri" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FilmProjeDBModel.Kullanıcılar" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmProjeDBModel.Kullanicilar" Width="1.5" PointX="3.375" PointY="2.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FilmProjeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FilmProjeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Filmler">
           <Key>
             <PropertyRef Name="ID" />
@@ -24,23 +24,22 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FilmturAdi" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Kullanıcılar">
+        <EntityType Name="Kullanicilar">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AdiSoyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
           <Property Name="Eposta" Type="nvarchar" MaxLength="50" />
           <Property Name="Şifre" Type="nvarchar" MaxLength="50" />
-          <Property Name="AktifPasif" Type="bit" />
         </EntityType>
         <EntityContainer Name="FilmProjeDBModelStoreContainer">
           <EntitySet Name="Filmler" EntityType="Self.Filmler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FilmTurleri" EntityType="Self.FilmTurleri" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Kullanıcılar" EntityType="Self.Kullanıcılar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FilmProjeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -63,21 +62,21 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FilmturAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Kullanıcılar">
+        <EntityContainer Name="FilmProjeDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Filmler" EntityType="Self.Filmler" />
+          <EntitySet Name="FilmTurleri" EntityType="Self.FilmTurleri" />
+          <EntitySet Name="Kullanicilar" EntityType="FilmProjeDBModel.Kullanicilar" />
+        </EntityContainer>
+        <EntityType Name="Kullanicilar">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AdiSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AktifPasif" Type="Boolean" />
         </EntityType>
-        <EntityContainer Name="FilmProjeDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Filmler" EntityType="Self.Filmler" />
-          <EntitySet Name="FilmTurleri" EntityType="Self.FilmTurleri" />
-          <EntitySet Name="Kullanıcılar" EntityType="Self.Kullanıcılar" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -105,14 +104,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Kullanıcılar">
-            <EntityTypeMapping TypeName="FilmProjeDBModel.Kullanıcılar">
-              <MappingFragment StoreEntitySet="Kullanıcılar">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AdiSoyadi" ColumnName="AdiSoyadi" />
-                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="FilmProjeDBModel.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
                 <ScalarProperty Name="Şifre" ColumnName="Şifre" />
-                <ScalarProperty Name="AktifPasif" ColumnName="AktifPasif" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

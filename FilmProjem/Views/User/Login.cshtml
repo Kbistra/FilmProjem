@@ -1,0 +1,71 @@
+﻿@model FilmProjem.DB.Kullanicilar
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+<html>
+
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .msg {
+            position: fixed;
+            top: 50px;
+            right: 30px;
+            width: 240px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    @if (Model != null)
+    {
+        <div class="msg">
+            <div class="alert alert-warning" role="alert">
+                Geçersiz Eposta veya Şifre!
+            </div>
+        </div>
+    }
+
+    <div class="form container">
+
+        <div class="row">
+            <div id="GİRİŞ YAP">
+                <h1 class="text-center" , clour="red">GİRİŞ</h1>
+                @using (Html.BeginForm("Login", "User"))
+                {
+                    <div class="top-row">
+
+
+                        <div class="field-wrap">
+                            <label>
+                                Email Adres<span class="req">*</span>
+                            </label>
+                            @Html.TextBoxFor(x => x.Eposta, new { @class = "form-control", required = true, autocomplete = "off" })
+                        </div>
+
+                        <div class="field-wrap form-input-group">
+                            <label>
+                                Şifre<span class="req">*</span>
+
+
+                            </label>
+                            @Html.TextBoxFor(x => x.Şifre, new { @class = "form-control", required = true, autocomplete = "off", type = "password" })
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-success ">Giriş Yap</button>
+                }
+            </div><!-- tab-content -->
+
+        </div> <!-- /form -->
+
+</body>
+
+</html>
+

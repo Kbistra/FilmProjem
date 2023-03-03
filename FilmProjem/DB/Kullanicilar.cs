@@ -12,12 +12,12 @@ namespace FilmProjem.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Kullanıcılar
+    public partial class Kullanicilar
     {
         public int ID { get; set; }
-        public string AdiSoyadi { get; set; }
+        public string Adi { get; set; }
+        public string Soyadi { get; set; }
         public string Eposta { get; set; }
         public string Şifre { get; set; }
-        public Nullable<bool> AktifPasif { get; set; }
     }
 }
